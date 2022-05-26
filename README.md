@@ -1,13 +1,13 @@
-veracode-github-action-workflows
+This repository contains sample github action workflow yml files for automated security scanning through Veracode
 
 Pre-Requisites
 
       Create Secrets 
-            VID: Veracode non-human user ID
-            VKey: Veracode non-human user secret
-            SRCCLR_API_TOKEN: Veracode SCA token
+            VID: <veracode API user ID>
+            VKey: <veracode API user secret>
+            SRCCLR_API_TOKEN: <veracode SCA token>
       
-      Replace following space holders with your specific values
+      Replace followings with your specific project values
             <repo_name>
             <branch_name>
             <veracode_application_name>
