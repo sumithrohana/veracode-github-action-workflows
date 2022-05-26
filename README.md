@@ -14,7 +14,7 @@ Pre-Requisites
             <veracode_application_name>
             <veracode_sandbox_name>
      
-      Change dependancy library versions with your choice
+      Change dependency library versions with your choice
             eg., java-version, python-version, npm-version etc.,
             
 
