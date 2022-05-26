@@ -1,4 +1,4 @@
-This repository contains sample github action workflow yml files for automated security scanning through Veracode
+This repository contains sample github action workflow yml files for automated security scanning through Veracode Platform.
 
 Pre-Requisites
 
@@ -8,8 +8,13 @@ Pre-Requisites
             SRCCLR_API_TOKEN: <veracode SCA token>
       
       Replace followings with your specific project values
+            <repo_URL>
             <repo_name>
             <branch_name>
             <veracode_application_name>
             <veracode_sandbox_name>
+     
+      Change dependancy library versions with your choice
+            eg., java-version, python-version, npm-version etc.,
+            
 
