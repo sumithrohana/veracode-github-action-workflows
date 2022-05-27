@@ -24,8 +24,8 @@ jobs:
 
      - shell: bash
        run: |
-        zip -9 -r <repo_name>.zip ./ -x pipeline-scan.jar results*.* ./build/libs/**\* ./tests/**\* ./.git*/**\* ./.sonar*/**\* ./.idea*/**\* ./**\*Test* ./**\*__tests__* ./test/**\* test-results/**\* .git/**\* ./**\*Test* ./**\*__tests* .github/**\* ./**\*__tests__* .idea/**\* .nyc_output/**\* coverage/**\* node_modules*/**\* sonar* ./**\*.jpg ./**\*.png
-        mkdir staging && cp <repo_name>.zip staging
+        zip -9 -r <binary_name>.zip ./ -x pipeline-scan.jar results*.* ./build/libs/**\* ./tests/**\* ./.git*/**\* ./.sonar*/**\* ./.idea*/**\* ./**\*Test* ./**\*__tests__* ./test/**\* test-results/**\* .git/**\* ./**\*Test* ./**\*__tests* .github/**\* ./**\*__tests__* .idea/**\* .nyc_output/**\* coverage/**\* node_modules*/**\* sonar* ./**\*.jpg ./**\*.png
+        mkdir staging && cp <binary_name>.zip staging
      - uses: actions/upload-artifact@v2 
        with:
         name: package
@@ -53,7 +53,7 @@ jobs:
       run: unzip -qq -n pipeline-scan-LATEST.zip
     - shell: bash
       run: |
-       java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "<repo_name>.zip" --fail_on_severity="Very High, High"
+       java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "<binary_name>.zip" --fail_on_severity="Very High, High"
     
  Veracode-SAST-Upload-Scan:
   runs-on: ubuntu-latest
@@ -73,7 +73,7 @@ jobs:
       appname: '<veracode-application_name>'
       sandboxname: '<veracode-sandbox_name>'
       createprofile: 'false'
-      filepath: '<repo_name>.zip'
+      filepath: '<binary_name>.zip'
       #deleteIncompleteScan: 'true'
       version: '<repo_name>_github_scan_<branch_name>: ${{ github.run_id }}' 
       #scantimeout: 30 #Uncomment this if you need to wait for results from Veracode Portal
