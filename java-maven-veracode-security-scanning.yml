@@ -22,6 +22,10 @@ jobs:
          fetch-depth: 0
      - shell: bash
        run: |
+       # if setting.xml, m2 and JFRO is involved
+       # use the following with relevant secrets
+       # cp settings.xml ~/.m2/settings.xml
+       # mvn clean install -DskipTests -DjfServer=${{ secrets.JFROG_Server }} -DjfUsername=${{ secrets.JFROG_USERNAME }} -DjfPassword=${{ secrets.JFROG_PASSWORD }}
         mvn clean install -DskipTests
      - run: mkdir staging && cp target/<binary_name>.jar staging
      - uses: actions/upload-artifact@v2 
