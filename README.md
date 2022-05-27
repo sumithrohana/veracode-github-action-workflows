@@ -11,6 +11,7 @@ Pre-Requisites
             <repo_URL>
             <repo_name>
             <branch_name>
+            <binary_name>
             <veracode_application_name>
             <veracode_sandbox_name>
      
