@@ -1,4 +1,4 @@
-This repository contains sample github action workflow yml files for automating security scanning through Veracode Platform.
+This repository contains sample GitHub Action Workflow yml files for automating Veracode security scanning through GitHub CI/CD pipelines.
 
 Pre-Requisites
 
