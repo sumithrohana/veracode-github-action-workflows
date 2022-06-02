@@ -82,7 +82,7 @@ jobs:
  Veracode-SCA:
   runs-on: ubuntu-latest
   steps:
-   - uses: actions/checkout@master
+   - uses: actions/checkout@v2
    - shell: bash
      env:
        SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
