@@ -79,6 +79,10 @@ jobs:
  Veracode-SCA:
   runs-on: ubuntu-latest
   steps:
+   - name: Set up JDK <java-version>
+       uses: actions/setup-java@v1
+       with:
+        java-version: <java-version>
    - uses: actions/checkout@v2
    - shell: bash
      env:
