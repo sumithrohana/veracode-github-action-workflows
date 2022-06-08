@@ -51,7 +51,8 @@ jobs:
       run: unzip -qq -n pipeline-scan-LATEST.zip
     - shell: bash
       run: |
-       java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "<binary_name>.jar" --fail_on_severity="Very High, High"
+       java -Dpipeline.debug=false -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "<binary_name>.jar" --fail_on_severity="Very High, High"
+    # if you want make -Dpipeline.debug=true
     
  Veracode-SAST-Upload-Scan:
   runs-on: ubuntu-latest
