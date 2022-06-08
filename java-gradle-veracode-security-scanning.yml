@@ -1,7 +1,7 @@
 name: gitHub_action_veracode_security_scanning
 
 on:
-  # Triggers the workflow on push or pull request events but only for the given branch.
+  # Triggers the workflow on push or pull request events but only for the given branch for e.g., [ develop, 'release**']
   push:
     branches: [ <branch_name> ]
   pull_request:
